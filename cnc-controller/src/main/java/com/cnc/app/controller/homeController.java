@@ -2,11 +2,13 @@ package com.cnc.app.controller;
 
 import com.cnc.app.model.Image;
 import com.cnc.app.service.ImageService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 @RestController
 public class homeController {
@@ -17,13 +19,13 @@ public class homeController {
         this.imageService = imageService;
     }
     @GetMapping("/")
-    public void home() throws IOException {
+    public String home() throws IOException {
+        return "Mission accomplished!" ;
+    }
+
+    @GetMapping("/pixels")
+    public ResponseEntity<String> getPixels() throws IOException {
         char[][] pixels = imageService.createImage();
-        for (int i = 0; i < pixels.length; i++) {
-            for (int j = 0; j < pixels[i].length; j++) {
-                System.out.println(pixels[i][j]);
-            }
-            System.out.println("/n");
-        }
+        return ResponseEntity.ok(Arrays.deepToString(pixels));
     }
 }
