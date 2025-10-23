@@ -52,7 +52,7 @@ public class PixelsProcessing {
 
         for (int y = 0; y < pixels.length; y++) {
             for (int x = 0; x < pixels[y].length; x++) {
-                charPixels[y][x] = (pixels[y][x] == 0) ? '1' : '0';
+                charPixels[y][x] = (pixels[y][x] == 0) ? '1' : ' ';
             }
         }
         return charPixels;
