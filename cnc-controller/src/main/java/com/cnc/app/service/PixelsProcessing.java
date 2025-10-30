@@ -14,6 +14,7 @@ public class PixelsProcessing {
         return pixelsToCharArray(pixels);
     }
 
+    //helper function
     private int[][] extractDownsampledPixels(BufferedImage img) {
         int origWidth = img.getWidth();
         int origHeight = img.getHeight();
@@ -47,6 +48,7 @@ public class PixelsProcessing {
         return pixels;
     }
 
+    //helper function
     private char[][] pixelsToCharArray(int[][] pixels) {
         char[][] charPixels = new char[pixels.length][pixels[0].length];
 

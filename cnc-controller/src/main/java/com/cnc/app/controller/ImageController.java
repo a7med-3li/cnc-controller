@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class ImageController {
     public BufferedImage readImage() throws IOException {
         BufferedImage img;
-        try (InputStream is = getClass().getClassLoader().getResourceAsStream("assets/img.png")) {
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream("assets/img2.png")) {
             if (is == null) {
                 throw new FileNotFoundException("Image not found in resources/assets/img.png");
             }
